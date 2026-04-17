@@ -18,7 +18,7 @@ from bookshop.books
 where book_id = 2;
 
 insert into bookshop.orders (order_customer_id, order_book_id, order_price, order_status)
-select 1, book_id, book_price, 'Сancel'
+select 1, book_id, book_price, 'Cancel'
 from bookshop.books
 where book_id = 2;
 
@@ -28,7 +28,7 @@ from bookshop.books
 where book_name = 'Код да Винчи';
 
 insert into bookshop.orders (order_customer_id, order_book_id, order_price, order_status)
-select 2, book_id, book_price, 'Сancel'
+select 2, book_id, book_price, 'Cancel'
 from bookshop.books
 where book_id = 4;
 
