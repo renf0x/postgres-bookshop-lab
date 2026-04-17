@@ -1,0 +1,16 @@
+services:                    # список сервисов, которые Compose будет запускать
+  db_bookshop-lab:                        # имя сервиса;
+    image: postgres:17       # официальный образ PostgreSQL версии 17
+    container_name: sql_bookshop-lab   # имя контейнера
+    restart: unless-stopped  # автоматически перезапускать контейнер
+    environment:             # переменные окружения для первичной настройки Postgres
+      POSTGRES_DB: sql_bookshop-lab
+      POSTGRES_USER: sql_adm
+      POSTGRES_PASSWORD: sql_qwerty
+    ports:
+      - "5433:5432"          #  хост 5433 -> контейнер 5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # хранить данные БД в отдельном постоянном томе
+
+volumes:
+  pgdata:                    
